@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
@@ -34,7 +34,7 @@ const useStyles = makeStyles({
     paddingBottom:10,
     paddingTop:20,
     // backgroundImage:'../../images/cloud.png',
-    background:'#378de7',
+    // background:'#378de7',
     
   },
   text:{
@@ -57,12 +57,52 @@ const useStyles = makeStyles({
 
 export default function WhetherCard({whetherData}) {
   const classes = useStyles();
+    ///Clear Sky
+    let clearSkyStyle ={
+        background:"#40b681",
+    }
+     ///Few Clouds
+     let fewClods ={
+      background:"#378de7",
+  }
+     ///Broken Clouds
+     let brokenClods ={
+        background:"#6149cb",
+    }
+     ///Light Ran
+     let lightRan ={
+        background:"#de934e",
+    }
+    ///mist
+    let mist ={
+        background:"#9c3939",
+    }
+
+
+  useEffect(() => {
+    if(whetherData.weather[0]["description"]==="clear sky"){
+        setStyle(clearSkyStyle);
+     }else if(whetherData.weather[0]["description"]==="light rain"){
+        setStyle(lightRan);
+     }else if(whetherData.weather[0]["description"]==="few clouds"){
+        setStyle(fewClods);
+     }else if(whetherData.weather[0]["description"]==="broken clouds"){
+        setStyle(brokenClods);
+     }else if(whetherData.weather[0]["description"]==="mist"){
+        setStyle(mist);
+     }
+  }, [whetherData])
+  const [style, setStyle] = useState(clearSkyStyle);
+
+
+
+
 
 
   return (
     <Card className={classes.root}>
       
-     <Paper className={classes.top}>
+     <Paper className={classes.top} style={ style}>
      <Grid container spacing={3}>
         <Grid item xs={6} lg={6}>
         <Typography className={classes.textHeader} color="textSecondary">
