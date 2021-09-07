@@ -21,7 +21,7 @@ const Home = () => {
       config: { headers: { "Content-Type": "multipart/form-data" } },
     })
       .then(function (response) {
-        setwhetherData((response.data.list));
+        setwhetherData(response.data.list);
         //handle success
       })
       .catch(function (response) {
@@ -37,22 +37,19 @@ const Home = () => {
     <CircularProgress />
   ) : (
     <div>
-        <Grid
-    //   className={classes.container}
-      container
-      alignItems="stretch"
-      spacing={3}
-    >
-{whetherData.map((whetherSingleData) => (
-        // <Grid key={whetherSingleData._id} item xs={12} sm={6} md={6} lg={3}>
+      <Grid
+        //   className={classes.container}
+        container
+        alignItems="stretch"
+        spacing={3}
+      >
+        {whetherData.map((whetherSingleData) => (
+          <Grid key={whetherSingleData._id} item xs={12} sm={12} md={6} lg={6}>
+ <WhetherCard whetherData={whetherSingleData} />
+          </Grid>
          
-        // </Grid>
-        <WhetherCard whetherData={whetherSingleData}/>
-      ))}
-        </Grid>
-      
-      
-      
+        ))}
+      </Grid>
     </div>
   );
 };
