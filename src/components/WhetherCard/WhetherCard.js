@@ -28,8 +28,10 @@ const useStyles = makeStyles({
     
   },
   top:{
+    
+    paddingLeft:10,
+    // backgroundImage:'../../images/cloud.png',
     background:'#378de7',
-    paddingLeft:10
     
   },
   text:{
@@ -53,10 +55,10 @@ export default function WhetherCard({whetherData}) {
         {whetherData.name},{whetherData.sys.country}
         </Typography>
         <Typography className={classes.textHeader} color="textSecondary">
-        <Moment  date={whetherData.dt} format="hh:mm A , MMM D"/>
+        <Moment  date={whetherData.dt} format="hh:mma , MMM D"/>
         </Typography>
         <Typography className={classes.textHeader} color="textSecondary">
-          {whetherData.weather.main}
+          <img src={`https://openweathermap.org/img/w/${whetherData.weather[0]["icon"]}.png`} alt={whetherData.weather[0]["description"]}/>{whetherData.weather[0]["description"]}
         </Typography>
         </Grid>
         <Grid item xs={6}>

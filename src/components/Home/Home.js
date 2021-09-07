@@ -45,9 +45,8 @@ const Home = () => {
       >
         {whetherData.map((whetherSingleData) => (
           <Grid key={whetherSingleData._id} item xs={12} sm={12} md={6} lg={6}>
- <WhetherCard whetherData={whetherSingleData} />
+            <WhetherCard whetherData={whetherSingleData} />
           </Grid>
-         
         ))}
       </Grid>
     </div>
