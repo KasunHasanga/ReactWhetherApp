@@ -53,7 +53,7 @@ export default function WhetherCard({whetherData}) {
         {whetherData.name},{whetherData.sys.country}
         </Typography>
         <Typography className={classes.textHeader} color="textSecondary">
-          Columbo Date
+        <Moment  date={whetherData.dt} format="hh:mm A , MMM D"/>
         </Typography>
         <Typography className={classes.textHeader} color="textSecondary">
           {whetherData.weather.main}
