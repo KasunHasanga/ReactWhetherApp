@@ -1,9 +1,19 @@
 import React, { useState, useEffect } from "react";
 import WhetherCard from "../WhetherCard/WhetherCard";
 import axios from "axios";
-import { CircularProgress, Grid } from "@material-ui/core";
+import { CircularProgress, Grid, makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles({
+    root: {
+  paddingLeft:35,
+  paddingRight:35
+    },
+    
+  
+  });
 
 const Home = () => {
+    const classes = useStyles();
   const url = "http://api.openweathermap.org/data/2.5/group";
   const api_key = "374ae00a2b8c9fd0840c0dcd7bc81eb7";
   const [whetherData, setwhetherData] = useState(null);
@@ -31,16 +41,28 @@ const Home = () => {
   }, [url]);
 
 
-  console.log(whetherData);
   return !whetherData ? (
+    <Grid
+    container
+    spacing={0}
+    direction="column"
+    alignItems="center"
+    justify="center"
+    style={{ minHeight: '100vh' }}
+  >
+  
+    <Grid item xs={3}>
     <CircularProgress />
+    </Grid>   </Grid>  
+    
   ) : (
     <div>
       <Grid
-        //   className={classes.container}
+          className={classes.root}
         container
         alignItems="stretch"
-        spacing={3}
+        spacing={5}
+
       >
         {whetherData.map((whetherSingleData) => (
           <Grid key={whetherSingleData._id} item xs={12} sm={12} md={6} lg={6}>

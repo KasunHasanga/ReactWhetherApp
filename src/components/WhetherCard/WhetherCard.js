@@ -1,16 +1,17 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import ArrayIcon from './../../images/arrow.png'
 import Moment from 'react-moment';
+import { Divider } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
+    margin:0,
     
   },
   textHeader: {
@@ -28,25 +29,38 @@ const useStyles = makeStyles({
     
   },
   top:{
-    
-    paddingLeft:10,
+    margin:0,
+    paddingLeft:20,
+    paddingBottom:10,
+    paddingTop:20,
     // backgroundImage:'../../images/cloud.png',
     background:'#378de7',
     
   },
   text:{
     color:'#fff',
-    
   },
+  divider:{
+    // minHeight: '80%',
+    backgroundColor:'#fff',
+    marginTop:20,
+    marginBottom: 25
+    // height:80%
+  },arrayIcon:{
+    display: 'flex',
+   textAlign:'center',
+   alignItems:'center',
+    width: 50,
+    justifyContent:'center'
+  }
 });
 
 export default function WhetherCard({whetherData}) {
   const classes = useStyles();
-  console.log(whetherData);
+
 
   return (
     <Card className={classes.root}>
-      <CardContent>
       
      <Paper className={classes.top}>
      <Grid container spacing={3}>
@@ -85,13 +99,17 @@ export default function WhetherCard({whetherData}) {
         </Typography><Typography className={classes.text}  color="textSecondary">
           Visibility : {whetherData.visibility/1000}km
         </Typography>
+        
         </Grid>
-        <Grid item xs={3}>
-        <img src={ArrayIcon} alt="Array Icon"/>
+        <Divider className={classes.divider} variant="middle" orientation="vertical" flexItem />
+        <Grid item xs={3}  alignItems="center"
+  justifyContent="center">
+        <img src={ArrayIcon} alt="Array Icon"  />
         <Typography className={classes.text}  color="textSecondary">
         {Math.round(whetherData.wind.speed*10)/10}m/s {whetherData.wind.deg} Degree
         </Typography>
         </Grid>
+        <Divider className={classes.divider} orientation="vertical" flexItem />
         <Grid item xs={3}>
         <Typography className={classes.text}  color="textSecondary">
           SunRise : <Moment  date={whetherData.sys.sunrise} format="hh:mm A"/>
@@ -104,7 +122,6 @@ export default function WhetherCard({whetherData}) {
       </Paper>
       
        
-      </CardContent>
 
     </Card>
   );
