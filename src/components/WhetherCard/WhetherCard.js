@@ -89,7 +89,7 @@ export default function WhetherCard({whetherData}) {
         <Grid item xs={3}>
         <img src={ArrayIcon} alt="Array Icon"/>
         <Typography className={classes.text}  color="textSecondary">
-          Data here
+        {Math.round(whetherData.wind.speed*10)/10}m/s {whetherData.wind.deg} Degree
         </Typography>
         </Grid>
         <Grid item xs={3}>

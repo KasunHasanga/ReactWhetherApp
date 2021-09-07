@@ -30,9 +30,8 @@ const Home = () => {
       });
   }, [url]);
 
-  console.log("-----------");
+
   console.log(whetherData);
-  console.log("-----------");
   return !whetherData ? (
     <CircularProgress />
   ) : (
