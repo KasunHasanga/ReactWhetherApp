@@ -35,7 +35,7 @@ const useStyles = makeStyles({
 
 export default function WhetherCard() {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
+
   const [data, setDate] = useState(null)
 
 //   useEffect(() => {
