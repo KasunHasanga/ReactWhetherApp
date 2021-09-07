@@ -5,6 +5,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import ArrayIcon from './../../images/arrow.png'
 
 const useStyles = makeStyles({
   root: {
@@ -87,9 +88,7 @@ export default function WhetherCard() {
         </Typography>
         </Grid>
         <Grid item xs={3}>
-        <Typography className={classes.bottomtext}  color="textSecondary">
-          Image
-        </Typography>
+        <img src={ArrayIcon} alt="Array Icon"/>
         <Typography className={classes.bottomtext}  color="textSecondary">
           Data here
         </Typography>
