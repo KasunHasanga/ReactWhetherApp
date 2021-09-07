@@ -94,11 +94,6 @@ export default function WhetherCard({whetherData}) {
   }, [whetherData])
   const [style, setStyle] = useState(clearSkyStyle);
 
-
-
-
-
-
   return (
     <Card className={classes.root}>
       
