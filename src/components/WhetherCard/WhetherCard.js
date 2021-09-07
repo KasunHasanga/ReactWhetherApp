@@ -1,4 +1,4 @@
-import React, { useState, useEffect }from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -33,20 +33,9 @@ const useStyles = makeStyles({
   },
 });
 
-export default function WhetherCard() {
+export default function WhetherCard({whetherData}) {
   const classes = useStyles();
-
-  const [data, setDate] = useState(null)
-
-//   useEffect(() => {
-//       //
-
-//       setDate(data.response);
-//   }, [])
-
-//   if(!data){
-//       return <>Loading</>
-//   }
+  console.log(whetherData);
 
   return (
     <Card className={classes.root}>
