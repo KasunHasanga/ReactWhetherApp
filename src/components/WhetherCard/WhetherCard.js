@@ -7,7 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import ArrayIcon from './../../images/arrow.png'
 import Moment from 'react-moment';
 import { Divider } from '@material-ui/core';
-
+import cloudImage from './../../images/cloudnew.png'
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
@@ -48,7 +48,7 @@ const useStyles = makeStyles({
     paddingLeft:20,
     paddingBottom:10,
     paddingTop:20,
-    // backgroundImage:'../../images/cloud.png',
+    // backgroundImage:`url($cloudImage)`,
     // background:'#378de7',
     
   },
@@ -76,22 +76,28 @@ export default function WhetherCard({whetherData}) {
     ///Clear Sky
     let clearSkyStyle ={
         background:"#40b681",
+        backgroundImage:`url(${cloudImage})`,
+        
     }
      ///Few Clouds
      let fewClods ={
       background:"#378de7",
+      backgroundImage:`url(${cloudImage})`,
   }
      ///Broken Clouds
      let brokenClods ={
         background:"#6149cb",
+        backgroundImage:`url(${cloudImage})`,
     }
      ///Light Ran
      let lightRan ={
         background:"#de934e",
+        backgroundImage:`url(${cloudImage})`,
     }
     ///mist
     let mist ={
         background:"#9c3939",
+        backgroundImage:`url(${cloudImage})`,
     }
 
 
@@ -106,6 +112,8 @@ export default function WhetherCard({whetherData}) {
         setStyle(brokenClods);
      }else if(whetherData.weather[0]["description"]==="mist"){
         setStyle(mist);
+     }else{
+      setStyle(clearSkyStyle);
      }
   }, [whetherData])
   const [style, setStyle] = useState(clearSkyStyle);

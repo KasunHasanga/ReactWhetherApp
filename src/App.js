@@ -9,8 +9,7 @@ import backgroundImage from './images/backgroundImage.png'
 const useStyles = makeStyles({
   root: {
 
-    margin:0,
-    padding:0,
+
     backgroundImage:`url(${backgroundImage})`,
     // backgroundSize: 'auto',
     // width: "100%",
