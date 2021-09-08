@@ -14,7 +14,7 @@ const useStyles = makeStyles({
 
 const Home = () => {
     const classes = useStyles();
-  const url = "http://api.openweathermap.org/data/2.5/group";
+   const url = process.env.REACT_APP_WEATHERAPP;
   const api_key = "374ae00a2b8c9fd0840c0dcd7bc81eb7";
   const [whetherData, setwhetherData] = useState(null);
   const params = {
