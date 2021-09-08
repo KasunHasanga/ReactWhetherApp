@@ -134,10 +134,10 @@ export default function WhetherCard({whetherData}) {
         {Math.round(whetherData.main.temp)}&deg;C
         </Typography>
         <Typography className={classes.textHeader} color="textSecondary">
-        Temp Min : {whetherData.main.temp_min}&deg;C
+        Temp Min : {Math.round(whetherData.main.temp_min)}&deg;C
         </Typography>
         <Typography className={classes.textHeader} color="textSecondary">
-        Temp Max : {whetherData.main.temp_max}&deg;C
+        Temp Max : {Math.round(whetherData.main.temp_max)}&deg;C
         </Typography>
         </Grid>
 
