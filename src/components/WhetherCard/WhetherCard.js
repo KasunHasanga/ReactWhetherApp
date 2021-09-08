@@ -17,15 +17,30 @@ const useStyles = makeStyles({
   textHeader: {
     marginBottom: 12,
     color:'#fff',
+    textAlign:'center'
+  }, 
+  closeButton: {
+    marginRight:15,
+    color:'#fff',
+    textAlign:'right'
+  },
+  textHeaderCountry: {
+    marginBottom: 12,
+    color:'#fff',
+    fontSize:25,
+    textAlign:'center'
   },
   textHeaderTemp: {
     marginBottom: 12,
     color:'#fff',
-    fontSize:30
+    fontSize:30,
+    textAlign:'center'
   },
   bottom:{
     background:'#373b47',
-    paddingLeft:10
+    paddingLeft:10,
+    paddingBottom:15,
+    textAlign:'center'
     
   },
   top:{
@@ -39,6 +54,7 @@ const useStyles = makeStyles({
   },
   text:{
     color:'#fff',
+    textAlign:'center'
   },
   divider:{
     // minHeight: '80%',
@@ -94,18 +110,16 @@ export default function WhetherCard({whetherData}) {
   }, [whetherData])
   const [style, setStyle] = useState(clearSkyStyle);
 
-
-
-
-
-
   return (
     <Card className={classes.root}>
       
      <Paper className={classes.top} style={ style}>
+     <Typography className={classes.closeButton} color="textSecondary">
+        X
+        </Typography>
      <Grid container spacing={3}>
         <Grid item xs={6} lg={6}>
-        <Typography className={classes.textHeader} color="textSecondary">
+        <Typography className={classes.textHeaderCountry} color="textSecondary">
         {whetherData.name},{whetherData.sys.country}
         </Typography>
         <Typography className={classes.textHeader} color="textSecondary">

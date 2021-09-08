@@ -14,8 +14,11 @@ const useStyles = makeStyles({
     },
     addCityBtn:{
         color:"#fff",
-        backgroundColor:"#6b5dd3"
+        backgroundColor:"#6b5dd3"  ,'&:hover': {
+            background: "#6b5dd3" ,
+         },
     },
+    
     logo:{
         width:50,
         height:50
@@ -45,7 +48,8 @@ const Header = () => {
                 <img className={classes.logo} src={WhetherLogo} alt="Array Icon"/>
                     <Typography className={classes.logoName} >Weather App</Typography>
                 </Grid>
-                <Grid  className={classes.inputField}>
+                <Grid  className={classes.inputField} direction="row" container  justifyContent="center"
+  alignItems="stretch">
                 <TextField
                 id="outlined-secondary"
                 label="Enter a city"
@@ -53,7 +57,7 @@ const Header = () => {
                 disabled
                 color="secondary"
                  />
-            <Button className={classes.addCityBtn} variant="contained" color="secondary">
+            <Button className={classes.addCityBtn} variant="contained" color="secondary" >
             Add City
             </Button>
                 </Grid >
