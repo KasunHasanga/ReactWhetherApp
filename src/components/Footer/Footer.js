@@ -16,7 +16,7 @@ const useStyles = makeStyles({
     },
     footer :{
         
-        marginTop:60,
+        paddingTop:60,
         bottom: 0,
         position: 'sticky'
       },
@@ -24,6 +24,11 @@ const useStyles = makeStyles({
           paddingTop:5,
           paddingBottom:5,
         color:'#fff',
+      },
+      textA:{
+        color:'#fff',
+        fontStyle:"none",
+        textDecoration:"none"
       }
 
   });
@@ -36,8 +41,9 @@ const Footer = () => {
         <Paper className={classes.root} elevation={1}>
         
           <Typography className={classes.text}>
-            2021 Fidenz Technologies
+            <a href='https://fidenz.com/en/' className={classes.textA}>2021 Fidenz Technologies</a>
           </Typography>
+        
         </Paper>
       </footer>
     )
