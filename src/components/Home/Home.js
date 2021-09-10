@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import WhetherCard from "../WhetherCard/WhetherCard";
 import axios from "axios";
-import { CircularProgress, Grid, makeStyles } from "@material-ui/core";
+import {  Grid, makeStyles } from "@material-ui/core";
 import './Home.css';
 // import Header from "../Header/Header";
 
 const useStyles = makeStyles({
     root: {
   paddingLeft:35,
-  paddingRight:35
+  paddingRight:35,
+  margin:0
     },
     
   
@@ -62,7 +63,7 @@ const Home = ({contryArray,setcontryArray}) => {
     
   ) : (
     <div>
-          {/* <Header/> */}
+         
       <Grid
         className={classes.root}
         container
@@ -71,8 +72,8 @@ const Home = ({contryArray,setcontryArray}) => {
 
       >
         {whetherData.map((whetherSingleData) => (
-          <Grid key={whetherSingleData._id} item xs={12} sm={12} md={6} lg={6}>
-            <WhetherCard whetherData={whetherSingleData} contryArray={contryArray} setcontryArray={setcontryArray}/>
+          <Grid key={whetherSingleData._id} item xs={12} sm={12} md={6} lg={4}>
+            <WhetherCard key={whetherSingleData._id} whetherData={whetherSingleData} contryArray={contryArray} setcontryArray={setcontryArray}/>
           </Grid>
         ))}
       </Grid>

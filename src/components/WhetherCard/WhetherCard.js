@@ -188,8 +188,8 @@ export default function WhetherCard({whetherData,setcontryArray,contryArray}) {
         
         </Grid>
         <Divider className={classes.divider} variant="middle" orientation="vertical" flexItem />
-        <Grid item xs={3}  alignItems="center"
-  justifyContent="center">
+        <Grid item xs={3} container  alignItems="center" 
+        justifyContent="center">
         <img src={ArrayIcon} alt="Array Icon"  />
         <Typography className={classes.text}  color="textSecondary">
         {Math.round(whetherData.wind.speed*10)/10}m/s {whetherData.wind.deg} Degree
