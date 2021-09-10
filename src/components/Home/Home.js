@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import WhetherCard from "../WhetherCard/WhetherCard";
 import axios from "axios";
 import { CircularProgress, Grid, makeStyles } from "@material-ui/core";
+import './Home.css';
+import Header from "../Header/Header";
 
 const useStyles = makeStyles({
     root: {
@@ -43,12 +45,13 @@ const Home = () => {
 
   return !whetherData ? (
     <Grid
+    
     container
     spacing={0}
     direction="column"
     alignItems="center"
     justify="center"
-    style={{ minHeight: '100vh' }}
+    style={{ minHeight: '100vh' ,width:'100%'}}
   >
   
     <Grid item xs={3}>
@@ -57,6 +60,7 @@ const Home = () => {
     
   ) : (
     <div>
+          <Header/>
       <Grid
           className={classes.root}
         container
