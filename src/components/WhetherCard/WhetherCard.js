@@ -11,6 +11,7 @@ import cloudImage from './../../images/cloudnew.png'
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
+    borderRadius: "10px",
     // margin:0,
     
   },
@@ -48,8 +49,11 @@ const useStyles = makeStyles({
     paddingLeft:20,
     paddingBottom:10,
     paddingTop:20,
-    // backgroundImage:`url($cloudImage)`,
-    // background:'#378de7',
+    // backgroundImage:`url(${cloudImage})`,
+    // backgroundSize: 'cover', 
+    // backgroundPosition: 'center center',
+    // backgroundRepeat: 'no-repeat',
+    // backgroundSize: "100%",
     
   },
   text:{
@@ -79,30 +83,45 @@ export default function WhetherCard({whetherData,setcontryArray,contryArray}) {
     let clearSkyStyle ={
         background:"#40b681",
         backgroundImage:`url(${cloudImage})`,
+        backgroundPosition: 'center center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: "100%",
         
     }
      ///Few Clouds
      let fewClods ={
       background:"#378de7",
       backgroundImage:`url(${cloudImage})`,
+      backgroundPosition: 'center center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: "100%",
   }
      ///Broken Clouds
      let brokenClods ={
         background:"#6149cb",
         backgroundImage:`url(${cloudImage})`,
+        backgroundPosition: 'center center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: "100%",
     }
      ///Light Ran
      let lightRan ={
         background:"#de934e",
         backgroundImage:`url(${cloudImage})`,
+        backgroundPosition: 'center center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: "100%",
     }
     ///mist
     let mist ={
         background:"#9c3939",
         backgroundImage:`url(${cloudImage})`,
+        backgroundPosition: 'center center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: "100%",
     }
 
-
+    const [style, setStyle] = useState(clearSkyStyle);
   useEffect(() => {
     if(whetherData.weather[0]["description"]==="clear sky"){
         setStyle(clearSkyStyle);
@@ -118,7 +137,7 @@ export default function WhetherCard({whetherData,setcontryArray,contryArray}) {
       setStyle(clearSkyStyle);
      }
   }, [whetherData])
-  const [style, setStyle] = useState(clearSkyStyle);
+  
   
 //   const handleRemove = (id) => {
 //     const newcontryArray = contryArray.filter((countryId) => countryId.id !== id);
@@ -143,7 +162,7 @@ export default function WhetherCard({whetherData,setcontryArray,contryArray}) {
   return (
     <Card className={classes.root}>
       
-     <Paper className={classes.top} style={ style}>
+     <Paper className={classes.top} style={style}>
      {/* <div onClick={removeCountry}> */}
      <Typography className={classes.closeButton} color="textSecondary" >
         X

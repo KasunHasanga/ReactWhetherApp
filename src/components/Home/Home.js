@@ -3,7 +3,6 @@ import WhetherCard from "../WhetherCard/WhetherCard";
 import axios from "axios";
 import {  Grid, makeStyles } from "@material-ui/core";
 import './Home.css';
-// import Header from "../Header/Header";
 
 const useStyles = makeStyles({
     root: {
@@ -11,8 +10,6 @@ const useStyles = makeStyles({
   paddingRight:35,
   margin:0
     },
-    
-  
   });
 
 const Home = ({contryArray,setcontryArray}) => {
@@ -48,7 +45,6 @@ const Home = ({contryArray,setcontryArray}) => {
 
   return !whetherData ? (
     <Grid
-    
     container
     spacing={0}
     direction="column"
@@ -63,7 +59,6 @@ const Home = ({contryArray,setcontryArray}) => {
     
   ) : (
     <div>
-         
       <Grid
         className={classes.root}
         container
