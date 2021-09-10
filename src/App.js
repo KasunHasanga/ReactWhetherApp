@@ -16,7 +16,8 @@ const useStyles = makeStyles({
     // height: "100%",
     backgroundColor:'#1f2128',
     backgroundRepeat:'no-repeat',
-    backgroundPosition: "start",
+    backgroundPosition: "center top",
+    backgroundSize: "fixed",
   
     // background:'#1f2128',
   },
