@@ -16,7 +16,7 @@ const useStyles = makeStyles({
     },
     footer :{
         
-        marginTop:60,
+        paddingTop:60,
         bottom: 0,
         position: 'sticky'
       },

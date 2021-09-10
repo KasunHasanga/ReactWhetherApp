@@ -11,11 +11,11 @@ import cloudImage from './../../images/cloudnew.png'
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
-    margin:0,
+    // margin:0,
     
   },
   textHeader: {
-    marginBottom: 12,
+    paddingBottom: 12,
     color:'#fff',
     textAlign:'center'
   }, 
@@ -44,7 +44,7 @@ const useStyles = makeStyles({
     
   },
   top:{
-    margin:0,
+    // margin:0,
     paddingLeft:20,
     paddingBottom:10,
     paddingTop:20,
@@ -71,7 +71,9 @@ const useStyles = makeStyles({
   }
 });
 
-export default function WhetherCard({whetherData}) {
+export default function WhetherCard({whetherData,setcontryArray,contryArray}) {
+
+
   const classes = useStyles();
     ///Clear Sky
     let clearSkyStyle ={
@@ -117,14 +119,36 @@ export default function WhetherCard({whetherData}) {
      }
   }, [whetherData])
   const [style, setStyle] = useState(clearSkyStyle);
+  
+//   const handleRemove = (id) => {
+//     const newcontryArray = contryArray.filter((countryId) => countryId.id !== id);
+//  console.log(newcontryArray);
+//  console.log("=====")
+//     setcontryArray(newcontryArray);
+//   };
+
+///todo implement remove part
+//   const removeCountry = event => {
+//     event.preventDefault();
+//     // setcontryArray(['1248991']);
+
+//         const newcontryArray = contryArray.filter((countryId) => countryId.id !== whetherData.id);
+//  console.log(newcontryArray);
+//  console.log("=====")
+//     setcontryArray(newcontryArray);
+//     // handleRemove(whetherData.id);
+// };
+
 
   return (
     <Card className={classes.root}>
       
      <Paper className={classes.top} style={ style}>
-     <Typography className={classes.closeButton} color="textSecondary">
+     {/* <div onClick={removeCountry}> */}
+     <Typography className={classes.closeButton} color="textSecondary" >
         X
         </Typography>
+     {/* </div> */}
      <Grid container spacing={3}>
         <Grid item xs={6} lg={6}>
         <Typography className={classes.textHeaderCountry} color="textSecondary">
